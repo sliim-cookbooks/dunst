@@ -20,6 +20,7 @@ default['dunst']['user'] = nil
 default['dunst']['group'] = node['dunst']['user']
 default['dunst']['home'] = "/home/#{node['dunst']['user']}"
 
+# Global configuration
 default['dunst']['global']['font'] = 'Monospace 8'
 default['dunst']['global']['allow_markup'] = 'yes'
 default['dunst']['global']['format'] = '<b>%s</b>\n%b'
@@ -51,22 +52,23 @@ default['dunst']['global']['icon_position'] = 'off'
 # rubocop:disable Metrics/LineLength
 default['dunst']['global']['icon_folders'] = '/usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/'
 
+# Frame configuration
 default['dunst']['frame']['width'] = 2
 default['dunst']['frame']['color'] = '#AAAAAA'
 
+# Shortcuts configuration
 default['dunst']['shortcuts']['close'] = 'ctrl+space'
 default['dunst']['shortcuts']['close_all'] = 'ctrl+shift+space'
 default['dunst']['shortcuts']['history'] = 'ctrl+grave'
 default['dunst']['shortcuts']['context'] = 'ctrl+shift+period'
 
+# Urgency configuration
 default['dunst']['urgency_low']['background'] = '#222222'
 default['dunst']['urgency_low']['foreground'] = '#888888'
 default['dunst']['urgency_low']['timeout'] = 10
-
 default['dunst']['urgency_normal']['background'] = '#285577'
 default['dunst']['urgency_normal']['foreground'] = '#FFFFFF'
 default['dunst']['urgency_normal']['timeout'] = 10
-
 default['dunst']['urgency_critical']['background'] = '#900000'
 default['dunst']['urgency_critical']['foreground'] = '#FFFFFF'
 default['dunst']['urgency_critical']['timeout'] = 0
