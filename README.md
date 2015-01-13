@@ -1,6 +1,7 @@
 dunst Cookbook | [![Cookbook Version](https://img.shields.io/cookbook/v/dunst.svg)](https://community.opscode.com/cookbooks/dunst) [![Build Status](https://travis-ci.org/sliim-cookbooks/dunst.svg?branch=master)](https://travis-ci.org/sliim-cookbooks/dunst)
 ==============
 This cookbook installs and configures [dunst](http://knopwob.org/dunst/index.html).
+
 It install the dunst package and setup user configuration if user attribute is specified (non-nil).
 
 
@@ -165,7 +166,7 @@ Look at `/usr/share/doc/dunst/dunst.example.qz` for more details about dunst con
 <td><tt>['dunst']['global']['horizontal_padding']</td>
 <td>Integer</td>
 <td><tt>8</tt></td>
-</tr>,
+</tr>
 <tr>
 <td><tt>['dunst']['global']['separator_color']</td>
 <td>String</td>
