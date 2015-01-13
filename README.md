@@ -300,17 +300,52 @@ Look at `/usr/share/doc/dunst/dunst.example.qz` for more details about dunst con
 </tr>
 </table>
 
+##### Rules
+You can setup rules with the `rules` attribute likes:
+
+```
+{
+  "espeak":{
+    "summary": "*",
+    "script": "dunst_espeak.sh"
+  }
+}
+```
+
+You can find more details about rules in the example configuration file, here is an extract:
+
+```
+Messages can be matched by "appname", "summary", "body", "icon", "category",
+"msg_urgency" and you can override the "timeout", "urgency", "foreground",
+"background", "new_icon" and "format".
+Shell-like globbing will get expanded.
+```
+
 Usage
 -----
 #### dunst::default
-Just include `dunst` in your node's `run_list`:
+Just set your preference in attributes and include `dunst` in your node's `run_list`:
 
 ```json
 {
 "name":"my_node",
   "run_list": [
     "recipe[dunst]"
-  ]
+  ],
+  "attributes": {
+    "dunst": {
+      "global": {
+        ...
+      },
+      ...
+      "rules": {
+        "espeak":{
+          "summary": "*",
+          "script": "dunst_espeak.sh"
+        }
+      }
+    }
+  }
 }
 ```
 

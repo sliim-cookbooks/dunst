@@ -60,4 +60,9 @@
     foreground = "<%= @dunst['urgency_critical']['foreground'] %>"
     timeout = <%= @dunst['urgency_critical']['timeout'] %>
 
-# TODO: rules
+<% @dunst['rules'].each do |rule, config| -%>
+[<%= rule %>]
+<% config.each do |k, v| -%>
+    <%= k %> = <%= v %>
+<% end -%>
+<% end -%>

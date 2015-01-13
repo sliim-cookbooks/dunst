@@ -20,6 +20,8 @@ default['dunst']['user'] = nil
 default['dunst']['group'] = node['dunst']['user']
 default['dunst']['home'] = "/home/#{node['dunst']['user']}"
 
+default['dunst']['rules'] = {}
+
 # Global configuration
 default['dunst']['global']['font'] = 'Monospace 8'
 default['dunst']['global']['allow_markup'] = 'yes'

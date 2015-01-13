@@ -13,3 +13,10 @@ suites:
     attributes:
       dunst:
         user: vagrant
+        rules:
+          my-rule:
+            summary: foo
+            urgency: low
+          my-rule2:
+            summary: bar
+            urgency: critical

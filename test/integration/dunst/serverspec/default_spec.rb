@@ -56,4 +56,12 @@ describe file('/home/vagrant/.config/dunst/dunstrc') do
   its(:content) { should match(/^\s+background = "\#900000"$/) }
   its(:content) { should match(/^\s+foreground = "\#FFFFFF"$/) }
   its(:content) { should match(/^\s+timeout = 0$/) }
+
+  # rules
+  its(:content) { should match(/^\[my-rule\]$/) }
+  its(:content) { should match(/^\s+summary = foo$/) }
+  its(:content) { should match(/^\s+urgency = low$/) }
+  its(:content) { should match(/^\[my-rule2\]$/) }
+  its(:content) { should match(/^\s+summary = bar$/) }
+  its(:content) { should match(/^\s+urgency = critical$/) }
 end
