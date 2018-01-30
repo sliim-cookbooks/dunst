@@ -3,13 +3,19 @@ source 'https://rubygems.org'
 
 gem 'chef'
 gem 'berkshelf'
+gem 'rake'
 
-group :integration do
-  gem 'rubocop'
-  gem 'rake'
-  gem 'test-kitchen'
-  gem 'kitchen-vagrant'
-  gem 'kitchen-openstack'
-  gem 'chefspec'
+group :lint do
+  gem 'cookstyle'
   gem 'foodcritic'
+end
+
+group :unit do
+  gem 'chefspec'
+end
+
+group :kitchen do
+  gem 'test-kitchen'
+  gem 'kitchen-docker'
+  gem 'kitchen-inspec'
 end

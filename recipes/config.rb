@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 # Cookbook Name:: dunst
-# Recipe:: default
+# Recipe:: config
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,3 +15,18 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
+directory "#{node['dunst']['home']}/.config/dunst" do
+  owner node['dunst']['user']
+  group node['dunst']['group']
+  recursive true
+  not_if { node['dunst']['user'].nil? }
+end
+
+template "#{node['dunst']['home']}/.config/dunst/dunstrc" do
+  owner node['dunst']['user']
+  group node['dunst']['group']
+  source 'dunstrc.erb'
+  variables config: node['dunst']['config'].merge(node['dunst']['rules'])
+  not_if { node['dunst']['user'].nil? }
+end

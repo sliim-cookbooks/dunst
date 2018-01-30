@@ -1,19 +1,12 @@
 # -*- coding: utf-8 -*-
 
-require 'serverspec'
-set :backend, :exec
-
-describe package('dunst') do
-  it { should be_installed }
-end
-
-describe file('/home/vagrant/.config/dunst/dunstrc') do
+describe file '/home/kitchen/.config/dunst/dunstrc' do
   it { should be_file }
-  it { should be_owned_by 'vagrant' }
-  it { should be_grouped_into 'vagrant' }
+  it { should be_owned_by 'kitchen' }
+  it { should be_grouped_into 'kitchen' }
   its(:content) { should match(/^\s+font = Monospace 8$/) }
   its(:content) { should match(/^\s+allow_markup = yes$/) }
-  its(:content) { should match(/^\s+format = "<b>%s<\/b>\\n%b"$/) }
+  its(:content) { should match(%r{^\s+format = "<b>%s<\/b>\\n%b"$}) }
   its(:content) { should match(/^\s+sort = yes$/) }
   its(:content) { should match(/^\s+indicate_hidden = yes$/) }
   its(:content) { should match(/^\s+alignment = left$/) }
@@ -39,7 +32,6 @@ describe file('/home/vagrant/.config/dunst/dunstrc') do
   its(:content) { should match(%r{^\s+dmenu = /usr/bin/dmenu -p dunst:$}) }
   its(:content) { should match(%r{^\s+browser = /usr/bin/firefox -new-tab$}) }
   its(:content) { should match(/^\s+icon_position = off$/) }
-  # rubocop:disable Metrics/LineLength
   its(:content) { should match(%r{^\s+icon_folders = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/$}) }
   its(:content) { should match(/^\s+width = 2$/) }
   its(:content) { should match(/^\s+color = "\#AAAAAA"$/) }
