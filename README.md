@@ -89,11 +89,11 @@ This recipe deploy the dunstrc configuration file for a user. `node[dunst][user]
           ...
         },
         ...
-        "rules": {
-          "espeak":{
-            "summary": "*",
-            "script": "dunst_espeak.sh"
-          }
+      },
+      "rules": {
+        "espeak":{
+          "summary": "*",
+          "script": "dunst_espeak.sh"
         }
       }
     }
