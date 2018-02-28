@@ -3,6 +3,10 @@ dunst CHANGELOG
 
 This file is used to list changes made in each version of the dunst cookbook.
 
+0.2.1
+-----
+- Set default attributes for Dunst 1.3.0
+
 0.2.0
 -----
 - Breaking changes: Dunst configuration attributes now located at `node[dunst][config]`
