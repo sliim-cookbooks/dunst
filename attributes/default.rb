@@ -31,7 +31,7 @@ default['dunst']['rules'] = {}
 default['dunst']['config'] = {
   global: {
     font: 'Monospace 8',
-    allow_markup: 'yes',
+    markup: 'no',
     format: '"<b>%s</b>\n%b"',
     sort: 'yes',
     indicate_hidden: 'yes',
@@ -58,11 +58,9 @@ default['dunst']['config'] = {
     dmenu: '/usr/bin/dmenu -p dunst:',
     browser: '/usr/bin/firefox -new-tab',
     icon_position: 'off',
-    icon_folders: '/usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/',
-  },
-  frame: {
-    width: 2,
-    color: '"#AAAAAA"',
+    icon_path: '/usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/',
+    frame_width: 2,
+    frame_color: '"#AAAAAA"',
   },
   shortcuts: {
     close: 'ctrl+space',
