@@ -18,8 +18,6 @@
 
 include_recipe 'dunst::compile'
 
-package node['dunst']['dunstify']['dependencies']
-
 execute 'dunstify-make' do
   cwd node['dunst']['compile']['build_dir']
   command 'make dunstify'

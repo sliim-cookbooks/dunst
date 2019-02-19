@@ -22,12 +22,10 @@ default['dunst']['user'] = nil
 default['dunst']['group'] = node['dunst']['user']
 default['dunst']['home'] = "/home/#{node['dunst']['user']}"
 
-default['dunst']['compile']['dependencies'] = %w(dbus libxinerama-dev libxrandr2 libxss-dev libxdg-basedir-dev libglib2.0-0 libpango-1.0-0 libcairo2-dev libgtk-3-dev libxrandr2 libxft-dev gir1.2-dbusmenu-glib-0.4 libdbusmenu-glib-dev)
+default['dunst']['compile']['dependencies'] = %w(dbus libxinerama-dev libxrandr2 libxss-dev libxdg-basedir-dev libglib2.0-0 libpango-1.0-0 libcairo2-dev libgtk-3-dev libxrandr2 libxft-dev gir1.2-dbusmenu-glib-0.4 libdbusmenu-glib-dev libnotify-dev)
 default['dunst']['compile']['build_dir'] = '/opt/dunst'
 default['dunst']['compile']['repository'] = 'https://github.com/dunst-project/dunst.git'
 default['dunst']['compile']['version'] = 'v1.3.1'
-
-default['dunst']['dunstify']['dependencies'] = %w(libnotify-dev)
 
 default['dunst']['rules'] = {}
 default['dunst']['config'] = {
