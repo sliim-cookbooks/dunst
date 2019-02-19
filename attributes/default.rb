@@ -27,6 +27,8 @@ default['dunst']['compile']['build_dir'] = '/opt/dunst'
 default['dunst']['compile']['repository'] = 'https://github.com/dunst-project/dunst.git'
 default['dunst']['compile']['version'] = 'v1.3.1'
 
+default['dunst']['dunstify']['dependencies'] = %w(libnotify-dev)
+
 default['dunst']['rules'] = {}
 default['dunst']['config'] = {
   global: {

@@ -25,6 +25,7 @@ suites:
   - name: compile
     run_list:
       - recipe[dunst::compile]
+      - recipe[dunst::dunstify]
       - recipe[dunst::config]
     attributes:
       dunst:
