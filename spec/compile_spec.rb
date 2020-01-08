@@ -4,7 +4,7 @@ require_relative 'spec_helper'
 
 describe 'dunst::compile' do
   let(:subject) do
-    ChefSpec::SoloRunner.new(platform: 'debian', version: '9.0') do |node|
+    ChefSpec::SoloRunner.new do |node|
       node.override['dunst']['compile']['build_dir'] = '/opt/dunst-build'
       node.override['dunst']['compile']['version'] = '4.2'
       node.override['dunst']['compile']['dependencies'] = %w(dbus)

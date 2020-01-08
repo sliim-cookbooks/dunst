@@ -4,7 +4,7 @@ require_relative 'spec_helper'
 
 describe 'dunst::config' do
   context 'without user configuration' do
-    subject { ChefSpec::SoloRunner.new(platform: 'debian', version: '9.0').converge(described_recipe) }
+    subject { ChefSpec::SoloRunner.new.converge(described_recipe) }
 
     it 'does not create dunst user directory' do
       expect(subject).to_not create_directory('/home//.config/dunst')
@@ -17,7 +17,7 @@ describe 'dunst::config' do
 
   context 'with user configuration' do
     let(:subject) do
-      ChefSpec::SoloRunner.new(platform: 'debian', version: '9.0') do |node|
+      ChefSpec::SoloRunner.new do |node|
         node.override['dunst']['user'] = 'user'
         node.override['dunst']['rules']['says'] = {
           'appname' => 'Pidgin',
